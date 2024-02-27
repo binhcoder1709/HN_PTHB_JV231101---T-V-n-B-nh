@@ -35,7 +35,7 @@ export const remove = createAsyncThunk("user/remove", async (id) => {
   }
 });
 
-// hàm chặn 1 bản ghi theo id
+// hàm patch 1 bản ghi theo id
 export const patch = createAsyncThunk(
   "user/patch",
   async ({ id, statusId }) => {
@@ -60,9 +60,9 @@ export const findOne = createAsyncThunk("user/findOne", async (id) => {
 });
 
 // hàm put bản ghi theo id
-export const put = createAsyncThunk("user/put", async (id) => {
+export const put = createAsyncThunk("user/put", async ({id, dataUpdate}) => {
   try {
-    let response = await baseUrl.put(`users/${id}`);
+    let response = await baseUrl.put(`users/${id}`, dataUpdate);
     return response.data;
   } catch (error) {
     console.log(error);

@@ -12,13 +12,13 @@ export default function Table() {
   const [selectedId, setSelectedId] = useState(null);
   // lấy dữ liệu từ api
   const dispatch = useDispatch();
-  const listUser = useSelector((state) => state.user.data);
   const loadData = () => {
     dispatch(findAll());
   };
   useEffect(() => {
     loadData();
   }, []);
+  const listUser = useSelector((state) => state.user.data);
   // lấy id nút block
   const handleBlock = (id) => {
     setBlockModal(true);

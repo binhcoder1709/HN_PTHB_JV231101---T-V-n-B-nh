@@ -86,7 +86,12 @@ const userSlice = createSlice({
       })
       .addCase(put.fulfilled, (state, action) => {
         state.status = "Successfully!";
-        state.userEdit = action.payload;
+        state.data = state.data.map((user) => {
+          if (user.id === action.payload?.id) {
+            return { ...user, ...action.payload };
+          }
+          return user;
+        });
       })
       .addCase(put.rejected, (state, action) => {
         state.status = "Failed!";
