@@ -27,8 +27,9 @@ function App() {
               className="form-control"
               placeholder="Tìm kiếm theo email"
               onChange={(e) => setSearchKey(e.target.value)}
+              value={searchKey}
             />
-            <i className="fa-solid fa-arrows-rotate" title="Refresh" />
+            <i className="fa-solid fa-arrows-rotate" title="Refresh" onClick={() => setSearchKey("")}/>
           </div>
           {/* Danh sách nhân viên */}
           <Table searchKey={searchKey} />
