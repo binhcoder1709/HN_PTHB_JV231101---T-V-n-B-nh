@@ -6,6 +6,7 @@ import Table from "./components/Table";
 
 function App() {
   const [displayForm, setDisplayForm] = useState(false);
+  const [searchKey, setSearchKey] = useState("");
   return (
     <>
       <div className="w-[80%] m-auto mt-4 h-[100vh]">
@@ -25,11 +26,12 @@ function App() {
               type="text"
               className="form-control"
               placeholder="Tìm kiếm theo email"
+              onChange={(e) => setSearchKey(e.target.value)}
             />
             <i className="fa-solid fa-arrows-rotate" title="Refresh" />
           </div>
           {/* Danh sách nhân viên */}
-          <Table/>
+          <Table searchKey={searchKey} />
           <footer className="d-flex justify-content-end">
             <div className="d-flex align-items-center gap-3">
               <select className="form-select">

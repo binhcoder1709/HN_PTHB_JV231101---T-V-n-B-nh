@@ -37,7 +37,7 @@ export default function Form({ setDisplayForm }) {
         createdAt: formatDate(),
       };
       dispatch(createAccount(user));
-      setDisplayForm(false)
+      setDisplayForm(false);
     },
   });
   return (

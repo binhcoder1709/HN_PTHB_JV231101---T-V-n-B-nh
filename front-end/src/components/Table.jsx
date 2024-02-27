@@ -5,7 +5,7 @@ import BlockModal from "./BlockModal";
 import DeleteModal from "./DeleteModal";
 import EditForm from "./EditForm";
 
-export default function Table() {
+export default function Table({ searchKey }) {
   const [deleteModal, setDeleteModal] = useState(false);
   const [blockModal, setBlockModal] = useState(false);
   const [editForm, setEditForm] = useState(false);
@@ -36,6 +36,12 @@ export default function Table() {
     setEditForm(true);
     setSelectedId(id);
   };
+
+  // hàm hiển thị dữ liệu tìm kiếm
+  const searchData = listUser.filter((user) =>
+    user.email.toLowerCase().includes(searchKey.toLowerCase())
+  );
+  console.log(searchData);
   return (
     <>
       <table className="table table-bordered table-hover table-striped">
@@ -51,7 +57,7 @@ export default function Table() {
           </tr>
         </thead>
         <tbody>
-          {listUser.map((item, index) => (
+          {searchData.map((item, index) => (
             <tr key={item.id}>
               <td>{index + 1}</td>
               <td>{item.userName}</td>

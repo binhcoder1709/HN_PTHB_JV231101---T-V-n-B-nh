@@ -60,7 +60,7 @@ export const findOne = createAsyncThunk("user/findOne", async (id) => {
 });
 
 // hàm put bản ghi theo id
-export const put = createAsyncThunk("user/put", async ({id, dataUpdate}) => {
+export const put = createAsyncThunk("user/put", async ({ id, dataUpdate }) => {
   try {
     let response = await baseUrl.put(`users/${id}`, dataUpdate);
     return response.data;
