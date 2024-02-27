@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "bdef",
+      "userName": "Nguyễn Văn An",
+      "dateOfBirth": "2024-02-01",
+      "email": "binhtommy1709@gmail.com",
+      "address": "Bắc Ninh",
+      "status": 1,
+      "createdAt": "26:02:2024 - 21:29:05"
+    },
+    {
+      "id": "6760",
+      "userName": "Tạ Văn Bình",
+      "dateOfBirth": "2004-09-17",
+      "email": "hn6006077@gmail.com",
+      "address": "Hà Nội",
+      "status": 1,
+      "createdAt": "27:02:2024 - 00:34:26"
+    }
+  ]
+}
